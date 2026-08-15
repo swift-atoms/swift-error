@@ -81,7 +81,8 @@ extension Error_Primitives.Error: CustomStringConvertible {
     /// A textual representation of this error, including its context when present.
     public var description: Swift.String {
         if let context {
-            return "\(context.operation): \(code) at \(context.function) (\(context.file.id):\(context.line))"
+            return
+                "\(context.operation): \(code) at \(context.function) (\(context.file.id):\(context.line))"
         }
         return "\(code)"
     }
