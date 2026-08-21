@@ -1,14 +1,3 @@
-// ===----------------------------------------------------------------------===//
-//
-// This source file is part of the swift-error-primitives open source project
-//
-// Copyright (c) 2024 Coen ten Thije Boonkkamp and the swift-error-primitives project authors
-// Licensed under Apache License v2.0
-//
-// See LICENSE for license information
-//
-// ===----------------------------------------------------------------------===//
-
 import Error_Primitives
 import Testing
 
@@ -23,14 +12,14 @@ extension `Error.Code Tests`.Unit {
 
     @Test
     func `POSIX code storage`() {
-        let code = Error.Code.posix(2)  // ENOENT
+        let code = Error.Code.posix(2)
         #expect(code.isPosix)
         #expect(!code.isWin32)
     }
 
     @Test
     func `Win32 code storage`() {
-        let code = Error.Code.win32(2)  // ERROR_FILE_NOT_FOUND
+        let code = Error.Code.win32(2)
         #expect(code.isWin32)
         #expect(!code.isPosix)
     }
@@ -44,7 +33,7 @@ extension `Error.Code Tests`.Unit {
 
         #expect(a == b)
         #expect(a != c)
-        #expect(a != d)  // Different enum cases
+        #expect(a != d)
     }
 
     @Test
