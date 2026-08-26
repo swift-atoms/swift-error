@@ -2,7 +2,7 @@
 # Triaged by AI-assisted bulk pass (2026-04-29).
 description: "A raw POSIX errno and Win32 GetLastError carrier with optional call-site diagnostic context for Swift."
 topics:
-  - primitives
+  - molecules
   - error
 homepage: "https://swift-institute.org"
 readme:

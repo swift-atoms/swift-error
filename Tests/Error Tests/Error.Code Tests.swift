@@ -1,4 +1,4 @@
-import Error_Primitives
+import Error
 import Testing
 
 @Suite

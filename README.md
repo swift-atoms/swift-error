@@ -1,4 +1,4 @@
-# Error Primitives
+# Error
 
 ![Development Status](https://img.shields.io/badge/status-active--development-blue.svg)
 
@@ -11,7 +11,7 @@ A throwable platform-error carrier for Swift — wraps a raw POSIX `errno` / Win
 `Error` is the ecosystem's transport layer for platform errors: it carries a raw `Error.Code` (the unmodified `errno` / `GetLastError` value) plus optional call-site `Error.Context`. It stores integers only — no C imports — so the same value travels unchanged from the syscall boundary through every layer that re-throws it.
 
 ```swift
-import Error_Primitives
+import Error
 
 // Wrap a raw platform error code.
 let notFound = Error(code: .posix(2))              // ENOENT
@@ -32,7 +32,7 @@ print(denied.code.isPosix)       // true
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/swift-primitives/swift-error-primitives.git", branch: "main")
+    .package(url: "https://github.com/swift-molecules/swift-error.git", branch: "main")
 ]
 ```
 
@@ -40,7 +40,7 @@ dependencies: [
 .target(
     name: "App",
     dependencies: [
-        .product(name: "Error Primitives", package: "swift-error-primitives"),
+        .product(name: "Error", package: "swift-error"),
     ]
 )
 ```
@@ -55,8 +55,8 @@ Two library products, zero external dependencies.
 
 | Product | Target | Purpose |
 |---------|--------|---------|
-| `Error Primitives` | `Sources/Error Primitives/` | The `Error` carrier struct + nested `Error.Code` (POSIX / Win32), `Error.Context` (diagnostic context), and `Error.File` (`#fileID`-shaped capture). |
-| `Error Primitives Test Support` | `Tests/Support/` | Re-exports the main target for test consumers. |
+| `Error` | `Sources/Error/` | The `Error` carrier struct + nested `Error.Code` (POSIX / Win32), `Error.Context` (diagnostic context), and `Error.File` (`#fileID`-shaped capture). |
+| `Error Test Support` | `Tests/Support/` | Re-exports the main target for test consumers. |
 
 Foundation-free.
 
