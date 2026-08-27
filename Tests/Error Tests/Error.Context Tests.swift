@@ -24,16 +24,4 @@ extension `Error.Context Tests`.Unit {
         #expect(context.file.id == "MyModule/File.swift")
         #expect(context.line == 42)
     }
-
-    @Test
-    func `Context description`() {
-        let context = Error.Context(
-            operation: "write",
-            function: "saveData()",
-            file: .init(id: "Storage/Writer.swift"),
-            line: 100
-        )
-
-        #expect(context.description == "write at saveData() (Storage/Writer.swift:100)")
-    }
 }

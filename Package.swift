@@ -17,28 +17,43 @@ let package = Package(
             targets: ["Error"]
         ),
         .library(
-            name: "Error Test Support",
-            targets: ["Error Test Support"]
+            name: "Error Standard Library Integration",
+            targets: ["Error Standard Library Integration"]
+        ),
+        .library(
+            name: "Error Apple Foundation Integration",
+            targets: ["Error Apple Foundation Integration"]
         ),
     ],
+    dependencies: [],
     targets: [
         .target(
             name: "Error",
             dependencies: []
         ),
         .target(
-            name: "Error Test Support",
+            name: "Error Standard Library Integration",
+            dependencies: ["Error"]
+        ),
+        .target(
+            name: "Error Apple Foundation Integration",
             dependencies: [
-                "Error"
-            ],
-            path: "Tests/Support"
+                "Error",
+                "Error Standard Library Integration",
+            ]
         ),
         .testTarget(
             name: "Error Tests",
+            dependencies: ["Error"],
+            path: "Tests/Error Tests"
+        ),
+        .testTarget(
+            name: "Error Standard Library Integration Tests",
             dependencies: [
                 "Error",
-                "Error Test Support",
-            ]
+                "Error Standard Library Integration",
+            ],
+            path: "Tests/Error Standard Library Integration Tests"
         ),
     ],
     swiftLanguageModes: [.v6]
