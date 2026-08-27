@@ -11,7 +11,7 @@ public struct Error: Swift.Error, Sendable, Equatable, Hashable {
     }
 }
 
-extension Error.Error {
+extension Error {
 
     @inlinable
     public static func capturing(

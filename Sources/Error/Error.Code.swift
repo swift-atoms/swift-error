@@ -1,4 +1,4 @@
-extension Error.Error {
+extension Error {
 
     public enum Code: Sendable, Equatable, Hashable {
 

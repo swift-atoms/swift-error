@@ -1,4 +1,4 @@
-extension Error.Error {
+extension Error {
 
     public struct File: Sendable, Equatable, Hashable {
 
@@ -11,7 +11,7 @@ extension Error.Error {
     }
 }
 
-extension Error.Error.File {
+extension Error.File {
 
     @inlinable
     public init(id: StaticString) {

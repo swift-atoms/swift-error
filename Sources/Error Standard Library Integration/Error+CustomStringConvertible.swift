@@ -1,6 +1,6 @@
 import Error
 
-extension Error.Error: CustomStringConvertible {
+extension Error: CustomStringConvertible {
 
     public var description: Swift.String {
         if let context {

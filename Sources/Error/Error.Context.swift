@@ -1,4 +1,4 @@
-extension Error.Error {
+extension Error {
 
     public struct Context: Sendable, Equatable, Hashable {
 
