@@ -1,4 +1,4 @@
-extension Error_Primitives.Error {
+extension Error::Error {
 
     public struct Context: Sendable, Equatable, Hashable {
 

@@ -3,7 +3,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "swift-error-primitives",
+    name: "swift-error",
     platforms: [
         .macOS(.v27),
         .iOS(.v27),
@@ -13,31 +13,19 @@ let package = Package(
     ],
     products: [
         .library(
-            name: "Error Primitives",
-            targets: ["Error Primitives"]
-        ),
-        .library(
-            name: "Error Primitives Test Support",
-            targets: ["Error Primitives Test Support"]
+            name: "Error",
+            targets: ["Error"]
         ),
     ],
     targets: [
         .target(
-            name: "Error Primitives",
+            name: "Error",
             dependencies: []
         ),
-        .target(
-            name: "Error Primitives Test Support",
-            dependencies: [
-                "Error Primitives"
-            ],
-            path: "Tests/Support"
-        ),
         .testTarget(
-            name: "Error Primitives Tests",
+            name: "Error Tests",
             dependencies: [
-                "Error Primitives",
-                "Error Primitives Test Support",
+                .target(name: "Error"),
             ]
         ),
     ],

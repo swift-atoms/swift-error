@@ -1,4 +1,4 @@
-extension Error_Primitives.Error {
+extension Error::Error {
 
     public enum Code: Sendable, Equatable, Hashable {
 
