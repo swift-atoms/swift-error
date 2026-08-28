@@ -1,4 +1,4 @@
-extension Error.Error {
+extension Error::Error {
 
     public struct Context: Sendable, Equatable, Hashable {
 

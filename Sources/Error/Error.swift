@@ -11,7 +11,7 @@ public struct Error: Swift.Error, Sendable, Equatable, Hashable {
     }
 }
 
-extension Error.Error {
+extension Error::Error {
 
     @inlinable
     public static func capturing(
@@ -33,7 +33,7 @@ extension Error.Error {
     }
 }
 
-extension Error.Error: CustomStringConvertible {
+extension Error::Error: CustomStringConvertible {
 
     public var description: Swift.String {
         if let context {

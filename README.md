@@ -32,7 +32,7 @@ print(denied.code.isPosix)       // true
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/swift-molecules/swift-error.git", branch: "main")
+    .package(url: "https://github.com/swift-atoms/swift-error.git", branch: "main")
 ]
 ```
 
@@ -51,12 +51,11 @@ Requires Swift 6.3.1 and macOS 26 / iOS 26 / tvOS 26 / watchOS 26 / visionOS 26 
 
 ## Architecture
 
-Two library products, zero external dependencies.
+One library product, zero external dependencies.
 
 | Product | Target | Purpose |
 |---------|--------|---------|
 | `Error` | `Sources/Error/` | The `Error` carrier struct + nested `Error.Code` (POSIX / Win32), `Error.Context` (diagnostic context), and `Error.File` (`#fileID`-shaped capture). |
-| `Error Test Support` | `Tests/Support/` | Re-exports the main target for test consumers. |
 
 Foundation-free.
 

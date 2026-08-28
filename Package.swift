@@ -16,28 +16,16 @@ let package = Package(
             name: "Error",
             targets: ["Error"]
         ),
-        .library(
-            name: "Error Test Support",
-            targets: ["Error Test Support"]
-        ),
     ],
     targets: [
         .target(
             name: "Error",
             dependencies: []
         ),
-        .target(
-            name: "Error Test Support",
-            dependencies: [
-                "Error"
-            ],
-            path: "Tests/Support"
-        ),
         .testTarget(
             name: "Error Tests",
             dependencies: [
-                "Error",
-                "Error Test Support",
+                .target(name: "Error"),
             ]
         ),
     ],
