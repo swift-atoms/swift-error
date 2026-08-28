@@ -1,4 +1,4 @@
-extension Error {
+extension Error.Error {
 
     public enum Code: Sendable, Equatable, Hashable {
 
@@ -28,5 +28,18 @@ extension Error.Code {
     @inlinable
     public var isWin32: Bool {
         if case .win32 = self { true } else { false }
+    }
+}
+
+extension Error.Code: CustomStringConvertible {
+
+    public var description: Swift.String {
+        switch self {
+        case .posix(let code):
+            return "posix(\(code))"
+
+        case .win32(let code):
+            return "win32(\(code))"
+        }
     }
 }

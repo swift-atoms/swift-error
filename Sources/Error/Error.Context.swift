@@ -1,4 +1,4 @@
-extension Error {
+extension Error.Error {
 
     public struct Context: Sendable, Equatable, Hashable {
 
@@ -22,5 +22,12 @@ extension Error {
             self.file = file
             self.line = line
         }
+    }
+}
+
+extension Error.Context: CustomStringConvertible {
+
+    public var description: Swift.String {
+        "\(operation) at \(function) (\(file.id):\(line))"
     }
 }

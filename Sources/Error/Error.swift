@@ -11,7 +11,7 @@ public struct Error: Swift.Error, Sendable, Equatable, Hashable {
     }
 }
 
-extension Error {
+extension Error.Error {
 
     @inlinable
     public static func capturing(
@@ -30,5 +30,16 @@ extension Error {
                 line: line
             )
         )
+    }
+}
+
+extension Error.Error: CustomStringConvertible {
+
+    public var description: Swift.String {
+        if let context {
+            return
+                "\(context.operation): \(code) at \(context.function) (\(context.file.id):\(context.line))"
+        }
+        return "\(code)"
     }
 }

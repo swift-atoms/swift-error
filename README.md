@@ -51,15 +51,14 @@ Requires Swift 6.3.1 and macOS 26 / iOS 26 / tvOS 26 / watchOS 26 / visionOS 26 
 
 ## Architecture
 
-Three library products, zero external dependencies.
+Two library products, zero external dependencies.
 
 | Product | Target | Purpose |
 |---------|--------|---------|
 | `Error` | `Sources/Error/` | The `Error` carrier struct + nested `Error.Code` (POSIX / Win32), `Error.Context` (diagnostic context), and `Error.File` (`#fileID`-shaped capture). |
-| `Error Standard Library Integration` | `Sources/Error Standard Library Integration/` | Swift standard library conformances (`CustomStringConvertible`). |
-| `Error Apple Foundation Integration` | `Sources/Error Apple Foundation Integration/` | Foundation-facing integration seam; the only module allowed to import Foundation. |
+| `Error Test Support` | `Tests/Support/` | Re-exports the main target for test consumers. |
 
-The `Error` module itself is Foundation-free.
+Foundation-free.
 
 ---
 
