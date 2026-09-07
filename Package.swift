@@ -13,8 +13,8 @@ let package = Package(
     ],
     products: [
         .library(name: "Error", targets: ["Error"]),
-        .library(name: "Error Standard Library Integration", targets: ["Error Standard Library Integration"]),
-        .library(name: "Error Foundation Library Integration", targets: ["Error Foundation Library Integration"]),
+
+        .library(name: "Error Foundation Integration", targets: ["Error Foundation Integration"]),
         .library(name: "Error Test Support", targets: ["Error Test Support"]),
     ],
     dependencies: [],
@@ -25,20 +25,13 @@ let package = Package(
             ],
             path: "Sources/Error"
         ),
+        
         .target(
-            name: "Error Standard Library Integration",
+            name: "Error Foundation Integration",
             dependencies: [
                 .target(name: "Error"),
             ],
-            path: "Sources/Error Standard Library Integration"
-        ),
-        .target(
-            name: "Error Foundation Library Integration",
-            dependencies: [
-                .target(name: "Error"),
-                .target(name: "Error Standard Library Integration"),
-            ],
-            path: "Sources/Error Foundation Library Integration"
+            path: "Sources/Error Foundation Integration"
         ),
         .target(
             name: "Error Test Support",
@@ -52,8 +45,7 @@ let package = Package(
             dependencies: [
                 .target(name: "Error"),
                 .target(name: "Error Test Support"),
-                .target(name: "Error Standard Library Integration"),
-                .target(name: "Error Foundation Library Integration"),
+                .target(name: "Error Foundation Integration"),
             ],
             path: "Tests/Error Tests"
         ),
