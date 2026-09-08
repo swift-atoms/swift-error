@@ -2,16 +2,16 @@ import Error
 import Testing
 
 @Suite
-struct `Error.Context Tests` {
-    @Suite struct Unit {}
-    @Suite struct `Edge Case` {}
-    @Suite struct Integration {}
+struct `Error contexts preserve operation and source location details` {
+    @Suite struct `Error context storage and descriptions retain every supplied field` {}
+    @Suite struct `No error context boundary cases are defined` {}
+    @Suite struct `No error context integration cases are defined` {}
 }
 
-extension `Error.Context Tests`.Unit {
+extension `Error contexts preserve operation and source location details`.`Error context storage and descriptions retain every supplied field` {
 
     @Test
-    func `Context storage`() {
+    func `Error contexts retain the supplied operation function file and line`() {
         let context = Error.Context(
             operation: "open",
             function: "readFile()",
@@ -26,7 +26,7 @@ extension `Error.Context Tests`.Unit {
     }
 
     @Test
-    func `Context description`() {
+    func `Error context descriptions combine the operation and source location`() {
         let context = Error.Context(
             operation: "write",
             function: "saveData()",
