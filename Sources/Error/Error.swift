@@ -18,7 +18,7 @@ extension Error::Error {
         _ code: Code,
         operation: StaticString,
         function: StaticString = #function,
-        file: File = File(id: #fileID),
+        file: File = #fileID,
         line: UInt32 = #line
     ) -> Self {
         Self(
