@@ -1,6 +1,6 @@
-extension Error.Code: Swift.CustomStringConvertible {
+extension Error.Code: Swift::CustomStringConvertible {
 
-    public var description: Swift.String {
+    public var description: Swift::String {
         switch self {
         case .posix(let code):
             return "posix(\(code))"

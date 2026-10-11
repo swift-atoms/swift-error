@@ -1,4 +1,4 @@
-public struct Error: Swift.Error, Sendable, Equatable, Hashable {
+public struct Error: Swift::Error, Sendable, Equatable, Hashable {
 
     public let code: Code
 
@@ -24,8 +24,8 @@ extension Error::Error {
         Self(
             code: code,
             context: Context(
-                operation: Swift.String(describing: operation),
-                function: Swift.String(describing: function),
+                operation: Swift::String(describing: operation),
+                function: Swift::String(describing: function),
                 file: file,
                 line: line
             )

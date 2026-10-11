@@ -1,6 +1,6 @@
-extension Error::Error: Swift.CustomStringConvertible {
+extension Error::Error: Swift::CustomStringConvertible {
 
-    public var description: Swift.String {
+    public var description: Swift::String {
         if let context {
             return
                 "\(context.operation): \(code) at \(context.function) (\(context.file.id):\(context.line))"

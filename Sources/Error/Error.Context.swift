@@ -2,9 +2,9 @@ extension Error::Error {
 
     public struct Context: Sendable, Equatable, Hashable {
 
-        public let operation: Swift.String
+        public let operation: Swift::String
 
-        public let function: Swift.String
+        public let function: Swift::String
 
         public let file: File
 
@@ -12,8 +12,8 @@ extension Error::Error {
 
         @inlinable
         public init(
-            operation: Swift.String,
-            function: Swift.String,
+            operation: Swift::String,
+            function: Swift::String,
             file: File,
             line: UInt32
         ) {
